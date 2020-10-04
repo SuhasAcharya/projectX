@@ -2,7 +2,7 @@ const app = require('express')();
 var cors = require('cors');
 const userLib = require('./database/mysql/user.lib');
 const fishLib = require('./database/mysql/fish.lib');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 
@@ -27,7 +27,8 @@ app.get('/user/:googleId/:userName', async (req, res) => {
 });
 
 app.get('/masterFishList', async (req, res) => {
-  let result = await fishLib.getMasterFishList();
+  let result = await fishLib.getMasterFishList({status: 1});
+  console.log(result)
   res.send(result);
 });
 

@@ -24,7 +24,7 @@ fishLib.getMasterFishDetails = async (filteredBy) => {
 	}
 }
 
-fishLib.getMasterFishList = async () => {
+fishLib.getMasterFishList = async (filteredBy) => {
 	const masterFishModel = await initMasterFishModel();
 	return await masterFishModel.findAll({where: filteredBy, raw: true, nest: true});
 }
