@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 //  Connect all our routes to our application
 app.get('/user/:googleId/:userName', async (req, res) => {
+  console.log('reqparams: -',req.params)
     const googleId = req.params.googleId.toString();
     const userName = req.params.userName.toString();
     let result = {};
