@@ -5,7 +5,7 @@ const { initUserFishTransactionModel } = require('../models/user_fish_transactio
 
 let fishLib = {};
 
-fishLib.createMasterUserFish = async (data) => {
+fishLib.createMasterFish = async (data) => {
 	try {
 		const masterFishModel = await initMasterFishModel();
 		return await masterFishModel.create(data);

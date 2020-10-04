@@ -1,6 +1,10 @@
 const app = require('express')();
+var cors = require('cors');
 const userLib = require('./database/mysql/user.lib');
+const fishLib = require('./database/mysql/fish.lib');
 const PORT = process.env.PORT || 3000;
+
+app.use(cors());
 
 //  Connect all our routes to our application
 app.get('/user/:googleId/:userName', async (req, res) => {
@@ -22,8 +26,8 @@ app.get('/user/:googleId/:userName', async (req, res) => {
     res.send(result);
 });
 
-app.get('/masterFishList', async (req, res) => {
-  let result = await userLib.createUser({user_name: 'alex'});
+app.get('/masterFishList/:masterFish', async (req, res) => {
+  let result = await fishLib.createMasterFish({user_name: 'alex'});
   res.send('success');
 });
 
