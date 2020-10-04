@@ -26,11 +26,9 @@ app.get('/user/:googleId/:userName', async (req, res) => {
     res.send(result);
 });
 
-app.get('/masterFishList/:masterFish', async (req, res) => {
-  data = req.params.masterFish;
-  data = JSON.parse(data);
-  let result = await fishLib.createMasterFish({fish_name: data.fish_name,price: data.price});
-  res.send('{}');
+app.get('/masterFishList', async (req, res) => {
+  let result = await fishLib.getMasterFishList();
+  res.send(result);
 });
 
 // Turn on that server!
