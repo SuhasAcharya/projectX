@@ -45,4 +45,4 @@ const initMasterFishModel = async () => {
 	}
 }
 
-module.exports = { masterFishModel };
+module.exports = { initMasterFishModel };
