@@ -1,7 +1,7 @@
 var config = require('../config');
-var Sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 
-var sequelize = new Sequelize(
+const sequelize = new Sequelize(
 	config.mysql.database,
 	config.mysql.username,
 	config.mysql.password, {
@@ -19,4 +19,4 @@ var sequelize = new Sequelize(
 	}
 );
 
-module.exports = sequelize;
+module.exports = { sequelize };

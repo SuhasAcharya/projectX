@@ -1,12 +1,12 @@
 const { initUserModel } = require('../models/user');
-const sequelize = require('sequelize');
+// const sequelize = require('sequelize');
 
 let userLib = {};
 
 userLib.createUser = async (data) => {
 	try {
 		const userModel = await initUserModel();
-		return await userModel.create({ name: "Jane" });
+		return await userModel.create(data);
 		
 	} catch (e) {
 		console.log(e)
@@ -14,19 +14,17 @@ userLib.createUser = async (data) => {
 }
 
 userLib.getUserDetail = async (filteredBy) => {
-	const userModel = initUserModel();
-	return await userModel.findOne(filteredBy);
+	try {
+		const userModel = initUserModel();
+		return await userModel.findOne({where: filteredBy, raw: true, nest: true});
+	} catch (e) {
+		console.log(e);
+	}
 }
 
 userLib.getUserList = async () => {
 	const userModel = initUserModel();
-	return await userModel.findAll(filteredBy);
+	return await userModel.findAll({where: filteredBy, raw: true, nest: true});
 }
 
-userLib.createNewUser = async (data) => {
-	const userModel = initUserModel();
-	let sql = `INSERT INTO user (user_id, user_name)
-	VALUES (0, ${data.user_name})`;
-	return await sequelize.query(sql);
-}
 module.exports = userLib;

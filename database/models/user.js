@@ -1,8 +1,6 @@
-var { DataTypes} = require('sequelize');
-var { sequelize } = require('../../base/mysql');
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../../base/mysql');
 let userModel;
-
-// module.exports = User;
 
 const initUserModel = async () => {
 	try {
@@ -15,8 +13,14 @@ const initUserModel = async () => {
 				primaryKey: true
 			},
 			user_name: {
-				type: Sequelize.STRING(100),
-				allowNull: false
+				type: DataTypes.STRING(100),
+				allowNull: false,
+				defaultValue: ''
+			},
+			google_id: {
+				type: DataTypes.STRING(100),
+				allowNull: false,
+				defaultValue: ''
 			}
 		}, {
 			freezeTableName : true
@@ -27,6 +31,7 @@ const initUserModel = async () => {
 		});
 		return userModel;
 	} catch (e) {
+		console.log(e);
 	}
 }
 
