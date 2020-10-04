@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@200;300;400;500&display=swap');
+
+:root{
+  --sf-darkblue:#345DA7;
+  --sf-normblue:#3b8ac4;
+  --sf-lightblue:#4bb4de;
+  --sf-sand:#efdbcb;
+  --sf-deepdarkblue:#283d5a;
+  --sf-lightgrey:#f9f9f9;
+}
+
+body{
+  font-family: 'Poppins', sans-serif!important;
+  /* font-family: 'Bangers', cursive!important; */
+}
+
+/* BACKGROUND COLORS */
+
+.sf-darkblue{
+  background: var(--sf-darkblue)!important;
+}
+
+.sf-normblue{
+  background: var(--sf-normblue)!important;
+}
+
+.sf-lightblue{
+  background: var(--sf-lightblue)!important;
+}
+
+.sf-sand{
+  background: var(--sf-sand)!important;
+}
+
+.sf-deepdarkblue{
+  background: var(--sf-deepdarkblue)!important;
+}
+
+.sf-lightgrey{
+  background:var(--sf-lightgrey) ;
+}
+
+/* TEXT COLORS */
+
+.sf-text-darkblue{
+  color: var(--sf-darkblue)!important;
+}
+
+.sf-text-normblue{
+  color: var(--sf-normblue)!important;
+}
+
+.sf-text-lightblue{
+  color: var(--sf-lightblue)!important;
+}
+
+.sf-text-sand{
+  color: var(--sf-sand)!important;
+}
+
+.sf-text-deepdarkblue{
+  color: var(--sf-deepdarkblue)!important;
+}
+
+/* fonts  */
+
+.font-bangers{
+  font-family: 'Bangers', cursive!important;
+}
+
+/* letter spacing */
+.ls-1{
+  letter-spacing: 1px;
+}
+
+.fishy-one{
+  min-height: 60vh;
+-webkit-animation: bounce-in-top 1.1s both;
+        animation: bounce-in-top 1.1s both;
+}
+
+.fishy-two{
+  min-height: 40vh;
+-webkit-animation: bounce-in-top 1.1s both;
+        animation: bounce-in-top 1.1s both;
+}
+
+.step{
+  height: 50px!important;
+  width: 50px!important;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-transparent{
+  height: 50px!important;
+  width: 50px!important;
+  border-radius: 100%;
+  border:2px solid var(--sf-darkblue); 
+  color:var(--sf-darkblue)!important;
+  background:none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-border{
+  border-top: 2px solid var(--sf-normblue);
+  border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 5%, rgb(255, 255, 255) 25%,var(--sf-deepdarkblue) 15%,rgb(255, 255, 255) 85%);
+  border-image-slice: 1;
+}
+
+.sf-border-bottom{
+  border-bottom: 4px solid var(--sf-sand)!important;
+}
+
+.sf-img{
+  max-height: 50vh!important;
+  max-width: 50vw!important;
+}
+
+.fish-shop , .fish-content {
+  position: relative;
+}
+
+.fish{
+  max-height: 200px!important;
+  max-width: 200px!important;
+}
