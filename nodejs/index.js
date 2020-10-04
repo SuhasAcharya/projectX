@@ -57,7 +57,7 @@ app.get('/userFishTrasactionAdd/:masterFishId/:userId/:price/:quantity', async (
 app.get('/userFishCartDetail/:userId', async (req, res) => {
   const userId = req.params.userId;
 
-  let result = await fishLib.createUserFish({user_id: userId, status: 6});
+  let result = await fishLib.getUserFishList({user_id: userId, status: 6});
   console.log(result)
   res.send(result);
 });
@@ -65,10 +65,11 @@ app.get('/userFishCartDetail/:userId', async (req, res) => {
 app.get('/userFishTransactionDetail/:userId', async (req, res) => {
   const userId = req.params.userId;
 
-  let result = await fishLib.createUserFish({user_id: userId});
+  let result = await fishLib.getUserFishTransactionList({user_id: userId});
   console.log(result)
   res.send(result);
 });
+
 
 
 // Turn on that server!
