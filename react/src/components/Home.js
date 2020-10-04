@@ -54,7 +54,7 @@ export default function Home() {
         <div className="col-sm-9 d-flex flex-column justify-content-center align-items-start">
             <h1 className="fish-one-text my-2 display-4 sf-text-sand ">FRESH FISH RIGHT AT YOUR DOORSTEP!</h1>
             <h1 className="fish-one-text my-2 sf-text-sand">You are just one click behind it</h1>
-            <Link to="/login">
+            <Link to="/fishes">
                 <button className="ls-1 mt-4 btn btn-lg rounded sf-lightblue text-white">lets start fishing!</button>
             </Link>
         </div>
