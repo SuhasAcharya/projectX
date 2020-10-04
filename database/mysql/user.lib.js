@@ -13,9 +13,9 @@ userLib.createUser = async (data) => {
 	}
 }
 
-userLib.getUserDetail = async (filteredBy) => {
+userLib.getUserDetails = async (filteredBy) => {
 	try {
-		const userModel = initUserModel();
+		const userModel = await initUserModel();
 		return await userModel.findOne({where: filteredBy, raw: true, nest: true});
 	} catch (e) {
 		console.log(e);
@@ -23,7 +23,7 @@ userLib.getUserDetail = async (filteredBy) => {
 }
 
 userLib.getUserList = async () => {
-	const userModel = initUserModel();
+	const userModel = await initUserModel();
 	return await userModel.findAll({where: filteredBy, raw: true, nest: true});
 }
 
