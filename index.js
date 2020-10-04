@@ -32,6 +32,45 @@ app.get('/masterFishList', async (req, res) => {
   res.send(result);
 });
 
+
+app.get('/userFishCartAdd/:masterFishId/:userId/:price/:quantity', async (req, res) => {
+  const masterFishId = req.params.masterFishId;
+  const userId = req.params.userId;
+  const price = req.params.price;
+  const quantity = req.params.quantity;
+
+  let result = await fishLib.createUserFish({master_fish_id: masterFishId, user_id: userId, price: price, quantity: quantity, status: 6});
+  console.log(result)
+  res.send(result);
+});
+
+app.get('/userFishTrasactionAdd/:masterFishId/:userId/:price/:quantity', async (req, res) => {
+  const masterFishId = req.params.masterFishId;
+  const userId = req.params.userId;
+  const price = req.params.price;
+  const quantity = req.params.quantity;
+  let result = await fishLib.createUserFishTransaction({master_fish_id: masterFishId, user_id: userId, price: price, quantity: quantity});
+  console.log(result)
+  res.send(result);
+});
+
+app.get('/userFishCartDetail/:userId', async (req, res) => {
+  const userId = req.params.userId;
+
+  let result = await fishLib.createUserFish({user_id: userId, status: 6});
+  console.log(result)
+  res.send(result);
+});
+
+app.get('/userFishTransactionDetail/:userId', async (req, res) => {
+  const userId = req.params.userId;
+
+  let result = await fishLib.createUserFish({user_id: userId});
+  console.log(result)
+  res.send(result);
+});
+
+
 // Turn on that server!
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
